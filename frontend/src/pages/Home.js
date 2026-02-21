@@ -26,7 +26,7 @@ const Home = () => {
       <main>
         <HeroSection onCTAClick={handleOpenForm} />
         <PainPointsSection />
-        <SolutionPillarsSection />
+        <SolutionPillarsSection onCTAClick={handleOpenForm} />
         <FeaturesModulesSection />
         <ROISection />
         <PricingSection onCTAClick={handleOpenForm} />
