@@ -56,27 +56,27 @@ const HeroSection = ({ onCTAClick }) => {
           {/* Badge */}
           <div className="inline-flex items-center space-x-2 bg-sky-500/10 border border-sky-500/30 rounded-full px-4 py-2 mb-8 animate-fadeIn">
             <TrendingUp size={16} className="text-sky-400" />
-            <span className="text-sky-400 text-sm font-medium">India's #1 School Digital Infrastructure Platform</span>
+            <span className="text-sky-400 text-sm font-medium">Complete School Management Platform</span>
           </div>
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fadeInUp leading-tight">
-            Transform Your School Into A
-            <span className="gradient-text block mt-2">Digital Powerhouse</span>
+            Transform Your School
+            <span className="gradient-text block mt-2">Digitally</span>
           </h1>
 
           {/* Sub-headline */}
           <p className="text-lg sm:text-xl md:text-2xl text-slate-300 mb-8 max-w-4xl mx-auto animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
-            Complete ERP + Parent/Teacher Apps + <span className="text-sky-400 font-semibold">Free Premium Website</span> (₹40,000 Value)
+            Complete ERP + Mobile Apps + Premium Website Included
             <br />
             <span className="text-base md:text-lg text-slate-400 mt-2 block">
-              Stop revenue leakage. End WhatsApp chaos. Get CEO-level control.
+              Streamline operations. Engage parents. Scale efficiently.
             </span>
           </p>
 
           {/* Key Benefits */}
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-10 animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
-            {['Revenue Control', 'Parent App', 'Free Website', 'Go Live in 7 Days'].map((benefit, index) => (
+            {['Financial Control', 'Parent Engagement', 'Modern Website', 'Quick Setup'].map((benefit, index) => (
               <div key={index} className="flex items-center space-x-2 text-slate-200">
                 <CheckCircle size={20} className="text-green-400" />
                 <span className="font-medium">{benefit}</span>

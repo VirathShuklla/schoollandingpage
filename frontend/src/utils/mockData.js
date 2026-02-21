@@ -26,7 +26,7 @@ export const painPoints = [
 export const solutionPillars = [
   {
     id: "revenue",
-    name: "Revenue Command Center",
+    name: "Fee Collection",
     tagline: "Complete Financial Control",
     features: [
       "Real-time fee collection dashboard",

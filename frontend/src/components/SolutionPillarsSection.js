@@ -35,9 +35,9 @@ const SolutionPillarsSection = () => {
               <button
                 key={pillar.id}
                 onClick={() => setActivePillar(pillar.id)}
-                className={`flex items-center space-x-3 px-6 py-4 rounded-xl font-semibold transition-all transform ${
+                className={`flex items-center space-x-3 px-6 py-4 rounded-xl font-semibold transition-all ${
                   activePillar === pillar.id
-                    ? 'bg-sky-500 text-white shadow-lg shadow-sky-500/40 scale-105'
+                    ? 'bg-sky-500 text-white shadow-lg shadow-sky-500/40'
                     : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
                 }`}
               >
@@ -76,10 +76,10 @@ const SolutionPillarsSection = () => {
             </ul>
 
             <button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={onCTAClick}
               className="bg-gradient-to-r from-sky-500 to-blue-500 text-white px-8 py-3 rounded-lg font-semibold hover:from-sky-600 hover:to-blue-600 transition-all transform hover:scale-105 shadow-lg"
             >
-              Learn More About {currentPillar.name}
+              Explore {currentPillar.name}
             </button>
           </div>
 
