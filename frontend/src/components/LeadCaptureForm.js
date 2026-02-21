@@ -103,8 +103,8 @@ const LeadCaptureForm = ({ isOpen, onClose }) => {
         {/* Header */}
         <div className="sticky top-0 bg-gradient-to-r from-sky-500 to-blue-500 p-6 flex items-center justify-between">
           <div>
-            <h2 className="text-2xl font-bold text-white">Apply for Digital Upgrade</h2>
-            <p className="text-blue-100 text-sm mt-1">Schedule your free consultation in the next step</p>
+            <h2 className="text-2xl font-bold text-white">Get Started with ArcTrack</h2>
+            <p className="text-blue-100 text-sm mt-1">We'll schedule a consultation in the next step</p>
           </div>
           <button 
             onClick={onClose}
