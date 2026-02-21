@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException, status
 from motor.motor_asyncio import AsyncIOMotorClient
 from models import LeadCreate, Lead, LeadResponse, LeadUpdate
+from services.email_service import send_lead_notification, send_lead_confirmation
 from typing import List
 import os
 import logging
@@ -37,6 +38,15 @@ async def create_lead(lead_data: LeadCreate):
             )
         
         logger.info(f"New lead created: {lead.id} - {lead.schoolName}")
+        
+        # Send email notifications (async, non-blocking)
+        try:
+            send_lead_notification(lead_dict)
+            send_lead_confirmation(lead_dict)
+            logger.info(f"Email notifications sent for lead {lead.id}")
+        except Exception as email_error:
+            logger.warning(f"Email notification failed for lead {lead.id}: {str(email_error)}")
+            # Continue even if email fails
         
         # Return response
         return LeadResponse(
