@@ -115,28 +115,6 @@ const Success = () => {
           </div>
         </div>
 
-        {/* Contact Info */}
-        <div className="bg-sky-500/10 border border-sky-500/30 rounded-xl p-6 text-center animate-fadeIn" style={{ animationDelay: '0.9s' }}>
-          <p className="text-white font-semibold mb-2">Need Immediate Assistance?</p>
-          <p className="text-slate-300 text-sm mb-4">Our team is available to answer your questions right now</p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a 
-              href="tel:+919999999999" 
-              className="bg-white text-slate-900 px-6 py-2 rounded-lg font-semibold hover:bg-slate-100 transition-colors"
-            >
-              📞 Call Us Now
-            </a>
-            <a 
-              href="https://wa.me/919999999999?text=Hi!%20I%20just%20submitted%20a%20demo%20request" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-green-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-600 transition-colors"
-            >
-              💬 WhatsApp Us
-            </a>
-          </div>
-        </div>
-
         {/* Back to Home */}
         <div className="text-center mt-8">
           <button
