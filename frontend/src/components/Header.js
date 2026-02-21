@@ -41,16 +41,16 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <button 
-              onClick={() => scrollToSection('features')}
+              onClick={() => scrollToSection('modules')}
               className="text-slate-300 hover:text-sky-500 transition-colors font-medium"
             >
-              Features
+              Modules
             </button>
             <button 
               onClick={() => scrollToSection('bonus')}
               className="text-slate-300 hover:text-sky-500 transition-colors font-medium"
             >
-              Free Website
+              Why ArcTrack
             </button>
             <button 
               onClick={() => scrollToSection('pricing')}
@@ -62,7 +62,7 @@ const Header = () => {
               onClick={() => scrollToSection('contact')}
               className="bg-sky-500 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-sky-600 transition-all transform hover:scale-105 shadow-lg shadow-sky-500/30"
             >
-              Book Free Demo
+              Get Started
             </button>
           </nav>
 
@@ -80,16 +80,16 @@ const Header = () => {
           <div className="md:hidden py-4 border-t border-slate-800 animate-fadeIn">
             <nav className="flex flex-col space-y-4">
               <button 
-                onClick={() => scrollToSection('features')}
+                onClick={() => scrollToSection('modules')}
                 className="text-slate-300 hover:text-sky-500 transition-colors font-medium text-left"
               >
-                Features
+                Modules
               </button>
               <button 
                 onClick={() => scrollToSection('bonus')}
                 className="text-slate-300 hover:text-sky-500 transition-colors font-medium text-left"
               >
-                Free Website
+                Why ArcTrack
               </button>
               <button 
                 onClick={() => scrollToSection('pricing')}
@@ -101,7 +101,7 @@ const Header = () => {
                 onClick={() => scrollToSection('contact')}
                 className="bg-sky-500 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-sky-600 transition-colors text-left"
               >
-                Book Free Demo
+                Get Started
               </button>
             </nav>
           </div>
