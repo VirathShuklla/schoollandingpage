@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { DollarSign, MessageSquare, BarChart3, TrendingUp, Users, Smartphone } from 'lucide-react';
 import { solutionPillars } from '../utils/mockData';
 
-const SolutionPillarsSection = () => {
+const SolutionPillarsSection = ({ onCTAClick }) => {
   const [activePillar, setActivePillar] = useState('revenue');
 
   const pillarIcons = {
