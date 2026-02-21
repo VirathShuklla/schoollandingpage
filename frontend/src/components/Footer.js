@@ -21,9 +21,9 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#features" className="text-slate-400 hover:text-sky-500 transition-colors">Features</a></li>
+              <li><a href="#modules" className="text-slate-400 hover:text-sky-500 transition-colors">Modules</a></li>
               <li><a href="#pricing" className="text-slate-400 hover:text-sky-500 transition-colors">Pricing</a></li>
-              <li><a href="#bonus" className="text-slate-400 hover:text-sky-500 transition-colors">Free Website</a></li>
+              <li><a href="#bonus" className="text-slate-400 hover:text-sky-500 transition-colors">Why ArcTrack</a></li>
               <li><a href="#contact" className="text-slate-400 hover:text-sky-500 transition-colors">Contact</a></li>
             </ul>
           </div>
