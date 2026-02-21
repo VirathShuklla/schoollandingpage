@@ -238,12 +238,12 @@ const LeadCaptureForm = ({ isOpen, onClose }) => {
                 <span>Submitting...</span>
               </>
             ) : (
-              <span>Continue to Schedule Demo</span>
+              <span>Continue</span>
             )}
           </button>
 
           <p className="text-slate-400 text-xs text-center">
-            By submitting, you agree to our terms. We'll schedule a 30-minute consultation at your convenience in the next step.
+            We'll contact you within 24 hours to schedule a personalized demo
           </p>
         </form>
       </div>
