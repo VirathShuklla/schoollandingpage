@@ -1,0 +1,183 @@
+{
+  "total_tests": 9,
+  "passed_tests": 9,
+  "success_rate": 100.0,
+  "test_results": [
+    {
+      "test_name": "Health Check",
+      "success": true,
+      "details": "Status: 200 (Expected: 200)",
+      "timestamp": "2026-02-21T02:58:52.318888",
+      "response_data": {
+        "status": "healthy",
+        "database": "connected"
+      }
+    },
+    {
+      "test_name": "Root Endpoint",
+      "success": true,
+      "details": "Status: 200 (Expected: 200)",
+      "timestamp": "2026-02-21T02:58:52.476821",
+      "response_data": {
+        "message": "ArcTrack API is running",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "test_name": "Create Lead (Valid)",
+      "success": true,
+      "details": "Status: 201 (Expected: 201)",
+      "timestamp": "2026-02-21T02:58:52.640698",
+      "response_data": {
+        "id": "8010679e-b53f-469a-bfb0-eeb27353a2fa",
+        "schoolName": "Test School Mumbai",
+        "studentStrength": "501-800",
+        "city": "Mumbai",
+        "contactName": "Rajesh Kumar",
+        "email": "rajesh.kumar@testschool.edu",
+        "phone": "9876543210",
+        "status": "New",
+        "createdAt": "2026-02-21T02:58:52.610921"
+      }
+    },
+    {
+      "test_name": "Create Lead (Invalid Email)",
+      "success": true,
+      "details": "Status: 422 (Expected: 422)",
+      "timestamp": "2026-02-21T02:58:52.761282",
+      "response_data": {
+        "detail": [
+          {
+            "type": "value_error",
+            "loc": [
+              "body",
+              "email"
+            ],
+            "msg": "value is not a valid email address: An email address must have an @-sign.",
+            "input": "invalid-email",
+            "ctx": {
+              "reason": "An email address must have an @-sign."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "Create Lead (Invalid Phone)",
+      "success": true,
+      "details": "Status: 422 (Expected: 422)",
+      "timestamp": "2026-02-21T02:58:52.884055",
+      "response_data": {
+        "detail": [
+          {
+            "type": "string_too_short",
+            "loc": [
+              "body",
+              "phone"
+            ],
+            "msg": "String should have at least 10 characters",
+            "input": "123456789",
+            "ctx": {
+              "min_length": 10
+            },
+            "url": "https://errors.pydantic.dev/2.12/v/string_too_short"
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "Create Lead (Missing Fields)",
+      "success": true,
+      "details": "Status: 422 (Expected: 422)",
+      "timestamp": "2026-02-21T02:58:53.025995",
+      "response_data": {
+        "detail": [
+          {
+            "type": "string_too_short",
+            "loc": [
+              "body",
+              "contactName"
+            ],
+            "msg": "String should have at least 2 characters",
+            "input": "",
+            "ctx": {
+              "min_length": 2
+            },
+            "url": "https://errors.pydantic.dev/2.12/v/string_too_short"
+          },
+          {
+            "type": "value_error",
+            "loc": [
+              "body",
+              "email"
+            ],
+            "msg": "value is not a valid email address: An email address must have an @-sign.",
+            "input": "",
+            "ctx": {
+              "reason": "An email address must have an @-sign."
+            }
+          },
+          {
+            "type": "string_too_short",
+            "loc": [
+              "body",
+              "phone"
+            ],
+            "msg": "String should have at least 10 characters",
+            "input": "",
+            "ctx": {
+              "min_length": 10
+            },
+            "url": "https://errors.pydantic.dev/2.12/v/string_too_short"
+          }
+        ]
+      }
+    },
+    {
+      "test_name": "Get All Leads",
+      "success": true,
+      "details": "Status: 200 (Expected: 200)",
+      "timestamp": "2026-02-21T02:58:53.141788",
+      "response_data": [
+        {
+          "id": "8010679e-b53f-469a-bfb0-eeb27353a2fa",
+          "schoolName": "Test School Mumbai",
+          "studentStrength": "501-800",
+          "city": "Mumbai",
+          "contactName": "Rajesh Kumar",
+          "email": "rajesh.kumar@testschool.edu",
+          "phone": "9876543210",
+          "status": "New",
+          "createdAt": "2026-02-21T02:58:52.610000"
+        }
+      ]
+    },
+    {
+      "test_name": "Get Lead 8010679e-b53f-469a-bfb0-eeb27353a2fa",
+      "success": true,
+      "details": "Status: 200 (Expected: 200)",
+      "timestamp": "2026-02-21T02:58:53.335796",
+      "response_data": {
+        "id": "8010679e-b53f-469a-bfb0-eeb27353a2fa",
+        "schoolName": "Test School Mumbai",
+        "studentStrength": "501-800",
+        "city": "Mumbai",
+        "contactName": "Rajesh Kumar",
+        "email": "rajesh.kumar@testschool.edu",
+        "phone": "9876543210",
+        "status": "New",
+        "createdAt": "2026-02-21T02:58:52.610000"
+      }
+    },
+    {
+      "test_name": "Get Non-existent Lead",
+      "success": true,
+      "details": "Status: 404 (Expected: 404)",
+      "timestamp": "2026-02-21T02:58:53.546736",
+      "response_data": {
+        "detail": "Lead with ID non-existent-id not found"
+      }
+    }
+  ],
+  "created_lead_id": "8010679e-b53f-469a-bfb0-eeb27353a2fa"
+}
