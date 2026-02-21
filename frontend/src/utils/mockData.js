@@ -127,7 +127,7 @@ export const pricingPlans = [
       "Attendance System",
       "Parent Mobile App",
       "Basic Reports",
-      "Free Premium Website"
+      "Premium Website Included"
     ],
     recommended: false
   },
