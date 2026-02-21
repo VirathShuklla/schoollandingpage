@@ -11,10 +11,10 @@ const PainPointsSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-            Running Your School <span className="text-red-400">Manually</span>?
+            Common School <span className="text-red-400">Challenges</span>
           </h2>
           <p className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto">
-            These critical problems are silently draining your revenue and reputation
+            Traditional school management creates these operational bottlenecks
           </p>
         </div>
 
@@ -55,20 +55,9 @@ const PainPointsSection = () => {
 
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
-          <div className="inline-block glass-effect rounded-2xl p-8 max-w-2xl">
-            <p className="text-xl text-white font-semibold mb-4">
-              Sound Familiar? You're Not Alone.
-            </p>
-            <p className="text-slate-400 mb-6">
-              Over 500+ schools have already eliminated these problems with ArcTrack's digital infrastructure.
-            </p>
-            <button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-sky-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-sky-600 transition-all transform hover:scale-105 shadow-lg shadow-sky-500/30"
-            >
-              See How We Solve This
-            </button>
-          </div>
+          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+            ArcTrack provides a complete solution to eliminate these challenges
+          </p>
         </div>
       </div>
     </section>
