@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, Star } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { pricingPlans } from '../utils/mockData';
 
 const PricingSection = ({ onCTAClick }) => {
@@ -9,10 +9,10 @@ const PricingSection = ({ onCTAClick }) => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-            Transparent <span className="gradient-text">Pricing</span>
+            Choose Your <span className="gradient-text">Plan</span>
           </h2>
           <p className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto">
-            Choose the perfect plan for your school size. All plans include the free premium website.
+            All plans include premium website, mobile apps, and complete ERP system
           </p>
         </div>
 
@@ -23,16 +23,15 @@ const PricingSection = ({ onCTAClick }) => {
               key={plan.id}
               className={`rounded-2xl p-8 relative ${
                 plan.recommended
-                  ? 'bg-gradient-to-br from-sky-500/20 to-blue-500/20 border-2 border-sky-500 shadow-2xl shadow-sky-500/20 transform scale-105'
+                  ? 'bg-gradient-to-br from-sky-500/20 to-blue-500/20 border-2 border-sky-500 shadow-2xl shadow-sky-500/20'
                   : 'glass-effect'
               }`}
             >
               {/* Recommended Badge */}
               {plan.recommended && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-to-r from-sky-500 to-blue-500 text-white px-4 py-1 rounded-full text-sm font-semibold flex items-center space-x-1">
-                    <Star size={14} fill="currentColor" />
-                    <span>Most Popular</span>
+                  <div className="bg-gradient-to-r from-sky-500 to-blue-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                    Recommended
                   </div>
                 </div>
               )}
@@ -72,16 +71,16 @@ const PricingSection = ({ onCTAClick }) => {
         {/* Bottom Info */}
         <div className="glass-effect rounded-xl p-8 max-w-3xl mx-auto text-center">
           <h3 className="text-xl font-bold text-white mb-3">
-            Not Sure Which Plan is Right for You?
+            Need Help Choosing?
           </h3>
           <p className="text-slate-400 mb-6">
-            Schedule a free consultation call. We'll understand your needs and recommend the perfect solution for your school.
+            Schedule a consultation to find the perfect solution for your school.
           </p>
           <button 
             onClick={onCTAClick}
             className="bg-gradient-to-r from-sky-500 to-blue-500 text-white px-8 py-3 rounded-lg font-semibold hover:from-sky-600 hover:to-blue-600 transition-all shadow-lg"
           >
-            Schedule Free Consultation
+            Talk to Us
           </button>
         </div>
       </div>
