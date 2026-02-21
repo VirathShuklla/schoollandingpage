@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Shield, Linkedin, Twitter } from 'lucide-react';
+import { Mail, MapPin, Shield } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,17 +12,9 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-2xl font-bold gradient-text mb-4">ArcTrack</h3>
             <p className="text-slate-400 mb-4 max-w-md">
-              India's most advanced digital infrastructure platform for private schools. 
-              Complete ERP + Free Premium Website.
+              Complete digital infrastructure platform for modern schools. 
+              ERP + Mobile Apps + Premium Website included.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-slate-400 hover:text-sky-500 transition-colors">
-                <Linkedin size={20} />
-              </a>
-              <a href="#" className="text-slate-400 hover:text-sky-500 transition-colors">
-                <Twitter size={20} />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -41,16 +33,12 @@ const Footer = () => {
             <h4 className="text-white font-semibold mb-4">Contact</h4>
             <ul className="space-y-3">
               <li className="flex items-start space-x-2 text-slate-400">
-                <Phone size={18} className="mt-1 flex-shrink-0" />
-                <span>+91 XXX XXX XXXX</span>
-              </li>
-              <li className="flex items-start space-x-2 text-slate-400">
                 <Mail size={18} className="mt-1 flex-shrink-0" />
-                <span>hello@arctrack.in</span>
+                <span>arctrackdev@gmail.com</span>
               </li>
               <li className="flex items-start space-x-2 text-slate-400">
                 <MapPin size={18} className="mt-1 flex-shrink-0" />
-                <span>Bangalore, India</span>
+                <span>India</span>
               </li>
             </ul>
           </div>

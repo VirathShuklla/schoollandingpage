@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { ArrowRight, CheckCircle, TrendingUp } from 'lucide-react';
-import { heroStats } from '../utils/mockData';
 
 const HeroSection = ({ onCTAClick }) => {
   useEffect(() => {
@@ -85,36 +84,15 @@ const HeroSection = ({ onCTAClick }) => {
             ))}
           </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-fadeInUp" style={{ animationDelay: '0.6s' }}>
+          {/* CTA Button */}
+          <div className="flex justify-center mb-12 animate-fadeInUp" style={{ animationDelay: '0.6s' }}>
             <button 
               onClick={onCTAClick}
-              className="btn-primary bg-sky-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-sky-600 transition-all transform hover:scale-105 shadow-2xl shadow-sky-500/40 flex items-center space-x-2 w-full sm:w-auto justify-center"
+              className="btn-primary bg-sky-500 text-white px-10 py-4 rounded-lg font-semibold text-lg hover:bg-sky-600 transition-all transform hover:scale-105 shadow-2xl shadow-sky-500/40 flex items-center space-x-2"
             >
-              <span>Apply for Digital Upgrade</span>
+              <span>Get Started</span>
               <ArrowRight size={20} />
             </button>
-            <button 
-              className="bg-transparent border-2 border-slate-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:border-sky-500 hover:text-sky-400 transition-all w-full sm:w-auto"
-              onClick={() => {
-                const videoElement = document.getElementById('demo-video');
-                if (videoElement) {
-                  videoElement.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-            >
-              Watch Demo
-            </button>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto animate-fadeIn" style={{ animationDelay: '0.8s' }}>
-            {heroStats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold gradient-text stat-number">{stat.value}</div>
-                <div className="text-slate-400 mt-1">{stat.label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </div>

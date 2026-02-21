@@ -1,10 +1,6 @@
 // Mock data for ArcTrack Landing Page
 
-export const heroStats = [
-  { value: "500+", label: "Schools Digitized" },
-  { value: "2.5L+", label: "Students Managed" },
-  { value: "₹125Cr+", label: "Fees Processed" }
-];
+// Hero stats removed for cleaner design
 
 export const painPoints = [
   {
