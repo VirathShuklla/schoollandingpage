@@ -268,3 +268,13 @@ input:focus, select:focus, textarea:focus {
 .animate-spin {
   animation: spin 1s linear infinite;
 }
+
+
+/* Hide Emergent watermark for paid subscription users */
+#emergent-badge,
+a[href*="emergent"][href*="badge"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
