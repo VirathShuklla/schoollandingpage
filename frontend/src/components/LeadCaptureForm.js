@@ -75,21 +75,27 @@ const LeadCaptureForm = ({ isOpen, onClose }) => {
     setIsSubmitting(true);
     
     try {
-      const response = await axios.post(`${API}/leads`, {
+      // Use Vercel serverless function
+      const apiUrl = process.env.REACT_APP_BACKEND_URL 
+        ? `${process.env.REACT_APP_BACKEND_URL}/api/submit-lead`
+        : '/api/submit-lead';
+
+      const response = await axios.post(apiUrl, {
         schoolName: formData.schoolName,
         studentStrength: formData.studentStrength,
         city: formData.city,
         contactName: formData.contactName,
         email: formData.email,
         phone: formData.phone,
-        source: 'Website Form'
       });
 
       // Redirect to success page with lead ID
-      window.location.href = `/success?leadId=${response.data.id}`;
+      if (response.data.success) {
+        window.location.href = `/success?leadId=${response.data.id}`;
+      }
     } catch (error) {
       console.error('Form submission error:', error);
-      alert('There was an error submitting your request. Please try again or contact us directly.');
+      alert('There was an error submitting your request. Please try again or contact us directly at arctrackdev@gmail.com');
     } finally {
       setIsSubmitting(false);
     }
