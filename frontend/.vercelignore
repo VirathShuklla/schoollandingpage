@@ -1,0 +1,26 @@
+# Vercel Ignore File
+
+# Don't upload these to Vercel
+node_modules
+.env.local
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output (Vercel builds from source)
+build
+dist
+
+# IDE
+.vscode
+.idea
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage
+*.test.js
+*.spec.js
