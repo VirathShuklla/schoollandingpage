@@ -70,7 +70,7 @@ SMTP_PASSWORD="your-sendgrid-api-key"
 ## Testing
 
 Once configured, test by:
-1. Visit: https://edu-booking-portal.preview.emergentagent.com
+1. Visit: https://arctrack-demo.preview.emergentagent.com
 2. Click "Get Started"
 3. Fill the form with test data
 4. Check arctrackdev@gmail.com inbox
