@@ -270,6 +270,27 @@ tail -f /var/log/supervisor/backend.err.log
 
 ## 🚀 Deployment
 
+### Vercel Deployment (Recommended - No Backend Server Needed!)
+
+Your app is configured for **serverless deployment** on Vercel with automatic email notifications.
+
+**Quick Start:**
+1. Get free Resend API key: https://resend.com/api-keys
+2. Push to GitHub
+3. Import to Vercel: https://vercel.com/new
+4. Add environment variables:
+   - `RESEND_API_KEY` - Your Resend API key
+   - `ADMIN_EMAIL` - arctrackdev@gmail.com
+5. Deploy!
+
+**📖 Complete Guide**: See `/VERCEL_DEPLOYMENT.md` for step-by-step instructions
+
+**Alternative**: See `/EMAILJS_ALTERNATIVE.md` for even simpler deployment (no backend at all)
+
+---
+
+## 🚀 Deployment
+
 ### Production Checklist
 
 - [ ] Update `ADMIN_PASSWORD` in AdminDashboard.js
