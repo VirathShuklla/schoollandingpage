@@ -1,22 +1,3 @@
-const { Resend } = require('resend');
-const { MongoClient } = require('mongodb');
-
-// Initialize Resend
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-// MongoDB connection (Vercel serverless compatible)
-let cachedClient = null;
-
-async function connectToDatabase() {
-  if (cachedClient) {
-    return cachedClient;
-  }
-
-  const client = await MongoClient.connect(process.env.MONGODB_URI);
-  cachedClient = client;
-  return client;
-}
-
 // CORS headers for Vercel
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -24,7 +5,17 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'Content-Type',
 };
 
+// Set CORS headers helper
+function setCorsHeaders(res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+}
+
 module.exports = async (req, res) => {
+  // Set CORS headers for all responses
+  setCorsHeaders(res);
+
   // Handle CORS preflight
   if (req.method === 'OPTIONS') {
     return res.status(200).json({ success: true });
