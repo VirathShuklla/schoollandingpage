@@ -74,8 +74,16 @@ const LeadCaptureForm = ({ isOpen, onClose }) => {
     setIsSubmitting(true);
     
     try {
-      // Use current FastAPI backend
-      const response = await axios.post(`${BACKEND_URL}/api/leads`, {
+      // Detect if running on Vercel or local development
+      const isVercel = window.location.hostname.includes('vercel.app') || 
+                       !process.env.REACT_APP_BACKEND_URL;
+      
+      // Use Vercel serverless function or FastAPI backend
+      const apiUrl = isVercel 
+        ? '/api/submit-lead'  // Vercel serverless function
+        : `${BACKEND_URL}/api/leads`;  // Local FastAPI backend
+
+      const response = await axios.post(apiUrl, {
         schoolName: formData.schoolName,
         studentStrength: formData.studentStrength,
         city: formData.city,
@@ -86,11 +94,11 @@ const LeadCaptureForm = ({ isOpen, onClose }) => {
       });
 
       // Redirect to success page with lead ID
-      if (response.data.id) {
-        window.location.href = `/success?leadId=${response.data.id}`;
-      }
+      const leadId = response.data.id || response.data.leadId || Date.now();
+      window.location.href = `/success?leadId=${leadId}`;
     } catch (error) {
       console.error('Form submission error:', error);
+      console.error('Error details:', error.response?.data);
       alert('There was an error submitting your request. Please try again or contact us directly at arctrackdev@gmail.com');
     } finally {
       setIsSubmitting(false);
