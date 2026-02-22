@@ -40,7 +40,8 @@ module.exports = async (req, res) => {
     // Save to MongoDB (if configured)
     if (process.env.MONGODB_URI) {
       try {
-        const client = await connectToDatabase();
+        const { MongoClient } = require('mongodb');
+        const client = await MongoClient.connect(process.env.MONGODB_URI);
         const db = client.db(process.env.MONGODB_DB_NAME || 'arctrack_db');
         await db.collection('leads').insertOne({
           id: leadId,
@@ -55,6 +56,7 @@ module.exports = async (req, res) => {
           createdAt: timestamp,
           updatedAt: timestamp,
         });
+        await client.close();
       } catch (dbError) {
         console.error('MongoDB error (non-blocking):', dbError);
       }
@@ -63,6 +65,9 @@ module.exports = async (req, res) => {
     // Send emails via Resend
     if (process.env.RESEND_API_KEY) {
       try {
+        const { Resend } = require('resend');
+        const resend = new Resend(process.env.RESEND_API_KEY);
+        
         // Email to admin
         await resend.emails.send({
           from: 'ArcTrack <onboarding@resend.dev>', // Use your verified domain
