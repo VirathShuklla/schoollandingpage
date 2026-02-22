@@ -4,7 +4,6 @@ import { studentStrengthOptions, indianCities } from '../utils/mockData';
 import axios from 'axios';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
 
 const LeadCaptureForm = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -75,22 +74,19 @@ const LeadCaptureForm = ({ isOpen, onClose }) => {
     setIsSubmitting(true);
     
     try {
-      // Use Vercel serverless function
-      const apiUrl = process.env.REACT_APP_BACKEND_URL 
-        ? `${process.env.REACT_APP_BACKEND_URL}/api/submit-lead`
-        : '/api/submit-lead';
-
-      const response = await axios.post(apiUrl, {
+      // Use current FastAPI backend
+      const response = await axios.post(`${BACKEND_URL}/api/leads`, {
         schoolName: formData.schoolName,
         studentStrength: formData.studentStrength,
         city: formData.city,
         contactName: formData.contactName,
         email: formData.email,
         phone: formData.phone,
+        source: 'Website Form'
       });
 
       // Redirect to success page with lead ID
-      if (response.data.success) {
+      if (response.data.id) {
         window.location.href = `/success?leadId=${response.data.id}`;
       }
     } catch (error) {
